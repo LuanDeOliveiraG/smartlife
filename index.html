@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml">
+<head profile="http://www.w3.org/2005/10/profile">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KY3LCD0Q3N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-KY3LCD0Q3N');
+</script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+          content="Control your Smart Life devices through your web browser.
+		Download timers and schedules for your switches and smart plugs,
+		instead of using eWelink app.">
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <link rel="icon" type="image/png" href="short_logo_trans.png">
+
+    <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2@2.0.0/dist/spectrum.min.css">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="css-grid.css">
+    <title>SmartAtHome.co.uk - My Smart Life Devices</title>
+    <script src="general_functions.js"></script>
+    <script src="functions.js?v=2"></script>
+</head>
+<body>
+<div id="page" data-role="page">
+
+    <a href="../index.html" class="logo-container">
+        <img src="opimed_logo.png" alt="SmartAtHome Logo" id="logo" class="overlay minimal">
+        <img src="opimed_logo.png" alt="SmartAtHome Logo" id="logo_dark" class="hidden minimal">
+    </a>
+
+    <div id="login" class="login-panel">
+
+        <h2>Entrar</h2>
+
+        <input
+            id="username"
+            type="email"
+            placeholder="E-mail do Smart Life / Tuya">
+
+        <input
+            id="password"
+            type="password"
+            placeholder="Senha">
+
+        <select id="region">
+            <option value="44" selected>Português</option>
+            <option value="1">Ingles</option>
+        </select>
+
+        <select id="platform">
+            <option value="smart_life" selected>Smart Life</option>
+            <option value="tuya">Tuya</option>
+        </select>
+
+        <div class="remember">
+            <input type="checkbox" id="storecreds">
+            <label for="storecreds">Manter conectado</label>
+        </div>
+
+        <button class="login-btn" onclick="return do_login();">
+            Entrar
+        </button>
+
+    </div>
+    <div class="carrega">
+        <div class="loader" id="loader"></div>
+        </div>
+    <div class="hidden minimal" id="buttons">
+
+        <div class="in-line-div">
+            <button onclick="checkTheme()" class="borderShadow">
+                &#9681; Tema
+            </button>
+        </div>
+
+        <div class="in-line-div">
+            <label for="autorefresh" class="borderShadow">
+                Atualização automática
+            </label>
+            <input type="checkbox" id="autorefresh">
+        </div>
+
+        <div class="in-line-div">
+            <button onclick="update_devices(true)" class="borderShadow">
+                Atualizar
+            </button>
+        </div>
+
+        <div class="in-line-div">
+            <button onclick="logout()" class="borderShadow">
+                Sair
+            </button>
+        </div>
+
+    </div>
+
+    <div id="switches"></div>
+
+</div>
+</body>
+</body>
+</html>
